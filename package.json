@@ -4,16 +4,62 @@
   "description": "学生信息、备案号、适龄提示，教育 App 的硬杠杠",
   "type": "module",
   "license": "MIT",
-  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "plugin", "skill", "security", "guard", "industry-education", "教育行业", "教育移动应用备案", "教APP备", "学生信息", "学籍号", "未成年人保护", "适龄提示", "儿童个人信息保护负责人"],
-  "files": ["lib", "skill", "bin", "rules", "docs", "cordis.patch.yml", "README.md"],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin",
+    "skill",
+    "security",
+    "guard",
+    "industry-education",
+    "教育行业",
+    "教育移动应用备案",
+    "教APP备",
+    "学生信息",
+    "学籍号",
+    "未成年人保护",
+    "适龄提示",
+    "儿童个人信息保护负责人"
+  ],
+  "files": [
+    "lib",
+    "skill",
+    "bin",
+    "rules",
+    "docs",
+    "cordis.patch.yml",
+    "README.md"
+  ],
   "main": "./lib/index.js",
-  "exports": { ".": "./lib/index.js", "./package.json": "./package.json" },
-  "bin": { "dsh-industry-education": "./bin/cli.mjs" },
-  "engines": { "dsh": ">=0.1.0-rc.6 <0.3.0", "node": ">=18" },
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
-  "dependencies": { "@deepwhale-cn/dsh-guard-core": "^0.10.1" },
-  "peerDependencies": { "@deepseek-ai/dsh-skill": "*" },
-  "repository": { "type": "git", "url": "git+https://github.com/feely0208/dsh-industry-education.git" },
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-industry-education": "bin/cli.mjs"
+  },
+  "engines": {
+    "dsh": ">=0.1.0-rc.6 <0.3.0",
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepwhale-cn/dsh-guard-core": "^0.10.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feely0208/dsh-industry-education.git"
+  },
   "homepage": "https://www.deepwhale.org.cn/skills.html",
-  "bugs": { "url": "https://github.com/feely0208/dsh-industry-education/issues" }
+  "bugs": {
+    "url": "https://github.com/feely0208/dsh-industry-education/issues"
+  }
 }
