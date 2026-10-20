@@ -1,0 +1,34 @@
+{
+  "id": "EDU-SCORE-RANK-PUBLIC",
+  "title": "代码或前端资源里出现成绩排名、名次榜单或升学情况",
+  "severity": "high",
+  "source": "《未成年人学校保护规定》（教育部令第50号）第十条第二款 —— 学校不得公开学生的考试成绩、名次等学业信息，不得宣传升学情况。",
+  "advice": "这条只在教育类项目里运行。命中项分三类：①「成绩/分数/score/exam/grade」附近出现「排名/名次/榜/leaderboard/rank」；② 出现 /score/rank 这类榜单路由；③ 出现「高考喜报 / 升学率 / 一本上线率」。对未成年人，成绩和名次属于不得公开的学业信息 —— 即使是「班级排行榜」这种看起来无害的功能也会踩线。做法：改成只查本人成绩（/api/score/mine），不提供任何跨人可见的排序或名次；前端不要渲染榜单。如果命中的只是数组排序变量（比如把 rank 当 sort 的别名），请改名或加注释说明，避免后续误读。本条是提示确认，不预设你已经在公开这些信息。",
+  "check": {
+    "type": "file-pattern",
+    "pattern": "(成绩|分数|score|exam|grade).{0,30}(排名|名次|榜|leaderboard|rank)|/score/rank|高考喜报|升学率|一本上线率",
+    "flags": "gi",
+    "exts": [
+      ".js",
+      ".mjs",
+      ".cjs",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".vue",
+      ".json",
+      ".html",
+      ".htm",
+      ".wxml",
+      ".ets",
+      ".uvue",
+      ".py",
+      ".java",
+      ".kt",
+      ".go",
+      ".dart",
+      ".swift"
+    ],
+    "when": "教育|学生|学籍|校园|学校|家长|教师|班级|课程|school|student|teacher|education"
+  }
+}

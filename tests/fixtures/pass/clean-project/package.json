@@ -1,0 +1,23 @@
+{
+  "name": "jiaxiaotong-app",
+  "version": "3.1.2",
+  "private": true,
+  "description": "家校通 —— 面向中小学生与家长的教育移动应用，已完成教育移动应用备案",
+  "main": "src/App.tsx",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "test": "jest"
+  },
+  "dependencies": {
+    "expo": "~51.0.28",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "@react-navigation/native": "^6.1.17",
+    "axios": "^1.7.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

@@ -1,0 +1,18 @@
+platform :ios, '13.0'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+
+target 'jiaxiaotong' do
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  pod 'Firebase/Core'
+  pod 'GoogleUtilities'
+
+  target 'jiaxiaotongTests' do
+    inherit! :complete
+  end
+end

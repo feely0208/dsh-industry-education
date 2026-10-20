@@ -1,0 +1,35 @@
+{
+  "id": "EDU-AGE-RANGE-NOTICE",
+  "title": "面向未成年人的教育 App 里找不到适龄范围说明",
+  "severity": "medium",
+  "source": "《教育部等八部门关于引导规范教育移动互联网应用有序健康发展的意见》（教技函〔2019〕55号）第（五）条 —— 教育移动应用应限制使用时长、明确适龄范围；《未成年人网络保护条例》（国务院令第766号）第二十八条 —— 网络服务提供者应当针对未成年人使用其服务设置相应的时间管理、权限管理、消费管理等功能。",
+  "advice": "这条只在出现「中小学生 / 小学 / 初中 / 高中 / 幼儿园 / 未成年」这类面向未成年人的信号时运行。app.json、AndroidManifest、Info.plist 和「关于」页里都找不到「适龄 / 适用年龄 / ageRating / contentRating」——说明应用没有向用户说明自己适合哪个年龄段使用。对面向未成年人的教育 App，这是硬要求：建议在应用商店配置里填 ageRating，在应用内「关于」页写明「适龄范围：X 周岁以上」，并配合使用时长限制一并说明。如果用户群其实是高校 / 职教 / 成人培训，请确认项目里是否误带了未成年人信号词——否则本条不适用。",
+  "check": {
+    "type": "files-lack",
+    "pattern": "适龄|适用年龄|ageRating|contentRating|age_rating",
+    "flags": "i",
+    "paths": [
+      "**/app.json",
+      "**/pages.json",
+      "**/manifest.json",
+      "**/AndroidManifest.xml",
+      "**/Info.plist",
+      "**/about/**",
+      "**/about*.vue",
+      "**/about*.html",
+      "**/about*.tsx",
+      "**/about*.jsx",
+      "**/about*.ets",
+      "**/settings*.vue",
+      "**/settings*.html",
+      "**/mine*.vue",
+      "**/profile*.vue",
+      "**/i18n/**",
+      "**/locales/**",
+      "**/lang/**",
+      "**/*.uvue",
+      "**/*.wxml"
+    ],
+    "when": "中小学生|小学|初中|高中|幼儿园|未成年"
+  }
+}

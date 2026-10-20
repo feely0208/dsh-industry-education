@@ -1,0 +1,19 @@
+{
+  "id": "EDU-APP-FILING-RECORD",
+  "title": "缺少教育移动应用备案信息表（docs/compliance 或 edu-app-record.*）",
+  "severity": "medium",
+  "source": "《教育移动互联网应用程序备案管理办法》（教技厅〔2019〕3号）第十二条、第十五条、第十七条、第十八条 —— 提供者应填写教育移动应用备案信息表；备案信息发生变更的，应在 10 个工作日内更新。",
+  "advice": "这条只在检测到移动端入口时运行。项目里找不到教育移动应用备案信息表（约定位置：docs/compliance/教育移动应用备案信息.md，或 edu-app-record.md / edu-app-record.json 这类文件），就无法证明备案信息已经填写并随应用变更同步更新。做法：建一份备案信息表，至少写清应用名称、备案号、提供者名称、统一社会信用代码、备案日期、最近更新日期；每次发版或变更后 10 个工作日内更新并在表内留一行变更记录。如果备案信息表放在内部知识库而不是代码仓库，请在此项目里放一份带链接的说明文件，并让本规则按需调整路径。",
+  "check": {
+    "type": "file-exists",
+    "globs": [
+      "docs/compliance/教育移动应用备案信息.md",
+      "docs/compliance/*备案信息*",
+      "**/教育移动应用备案信息*",
+      "**/edu-app-record.*",
+      "**/edu-app-filing-record.*"
+    ],
+    "require": true,
+    "when": "<manifest[^>]*android:|CFBundleIdentifier|\"react-native\"|\"expo\"|\"@capacitor/core\"|\"cordova\"|\"uni-app\"|\"taro\"|sdk:\\s*flutter|flutter:"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "EDU-AD-GAME-SDK",
+  "title": "教育 App 依赖清单里出现商业广告或游戏 SDK 名称",
+  "severity": "high",
+  "source": "《教育部等八部门关于引导规范教育移动互联网应用有序健康发展的意见》（教技函〔2019〕55号）第（十一）条 —— 不得向学生及家长收取费用，不得植入商业广告和游戏。",
+  "advice": "这条只在教育类项目里运行，只扫描依赖清单（package.json / build.gradle / Podfile / pubspec.yaml 等）。命中说明里出现了广告或游戏 SDK 的包名：AdMob、play-services-ads、腾讯广点通（com.qq.e）、百度 mobads、穿山甲 BUAdSDK、Unity、Cocos2d。注意：**仅命中依赖名不判违规** —— 可能是历史遗留依赖、可能是构建脚本里的排除项、也可能是被间接依赖带进来的。请先确认它是否真的会向学生展示广告或提供游戏内容；确认不存在就删掉依赖，确实需要就记录评估结论。本条是提示确认，不预设你的应用在投放广告。",
+  "check": {
+    "type": "file-pattern",
+    "pattern": "admob|play-services-ads|com\\.qq\\.e\\b|com\\.baidu\\.mobads|BUAdSDK|\\bunity\\b|cocos2d",
+    "flags": "gi",
+    "paths": [
+      "**/package.json",
+      "**/build.gradle",
+      "**/build.gradle.kts",
+      "**/Podfile",
+      "**/*.podspec",
+      "**/pubspec.yaml"
+    ],
+    "when": "教育|学生|学籍|校园|学校|家长|教师|班级|课程|school|student|teacher|education"
+  }
+}

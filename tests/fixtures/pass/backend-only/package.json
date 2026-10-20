@@ -1,0 +1,15 @@
+{
+  "name": "edu-admin-server",
+  "version": "1.4.0",
+  "private": true,
+  "description": "成人职业技能培训平台的后端服务（无移动端入口）",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

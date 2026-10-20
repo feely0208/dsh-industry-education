@@ -1,0 +1,36 @@
+{
+  "id": "EDU-APP-FILING-PUBLIC",
+  "title": "教育移动应用里找不到备案号公示（教APP备NNNNNNN号）",
+  "severity": "high",
+  "source": "《教育移动互联网应用程序备案管理办法》（教技厅〔2019〕3号）第十四条 —— 提供者应在教育移动应用中公示备案信息，以便用户查询。",
+  "advice": "这条只在检测到移动端入口时运行（Info.plist / AndroidManifest / react-native / expo / uni-app 等标志）。移动端项目里找不到「教APP备1100849号」这种格式的备案号，意味着用户无法在应用内查询到备案信息。做法：把教育移动应用备案号放到「关于」页、设置页或启动页的显著位置，顺带在 i18n 文案与 app.json / Info.plist 里也留一份，避免某个入口漏掉。如果备案还在办理中，请在发布说明里写明预计完成时间，不要先上线再补。",
+  "check": {
+    "type": "files-lack",
+    "pattern": "教APP备\\s*\\d{7}\\s*号",
+    "flags": "i",
+    "paths": [
+      "**/app.json",
+      "**/pages.json",
+      "**/manifest.json",
+      "**/AndroidManifest.xml",
+      "**/Info.plist",
+      "**/about/**",
+      "**/about*.vue",
+      "**/about*.html",
+      "**/about*.tsx",
+      "**/about*.jsx",
+      "**/about*.js",
+      "**/about*.ets",
+      "**/settings*.vue",
+      "**/settings*.html",
+      "**/mine*.vue",
+      "**/profile*.vue",
+      "**/i18n/**",
+      "**/locales/**",
+      "**/lang/**",
+      "**/*.uvue",
+      "**/*.wxml"
+    ],
+    "when": "<manifest[^>]*android:|CFBundleIdentifier|\"react-native\"|\"expo\"|\"@capacitor/core\"|\"cordova\"|\"uni-app\"|\"taro\"|sdk:\\s*flutter|flutter:"
+  }
+}
