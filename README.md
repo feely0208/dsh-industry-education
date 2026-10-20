@@ -74,6 +74,10 @@
 ## 安装
 
 ```bash
+# 推荐：从市场 / GitHub 直接装进 DSH
+dsh plugin --profile web add @deepwhale-cn/dsh-industry-education
+
+# 或者只装成普通 npm 包，自己接进组合层
 npm i -D @deepwhale-cn/dsh-industry-education
 ```
 
