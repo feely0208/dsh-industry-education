@@ -1,6 +1,6 @@
 {
   "name": "@deepwhale-cn/dsh-industry-education",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "学生信息、备案号、适龄提示，教育 App 的硬杠杠",
   "type": "module",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "rules",
     "docs",
     "cordis.patch.yml",
+    "tests/fixtures",
     "README.md"
   ],
   "main": "./lib/index.js",
