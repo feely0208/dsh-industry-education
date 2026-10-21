@@ -183,3 +183,7 @@ tests/fixtures/pass/backend-only/     反例·when：成人培训纯后端，行
 ## License
 
 MIT © 深鲸 DeepWhale
+
+---
+
+<p align="right"><a href="https://deepwhale.org.cn"><img src="https://www.deepwhale.org.cn/images/badge/deepwhale-badge.png" alt="powered by dwh" height="20"></a></p>
