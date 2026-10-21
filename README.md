@@ -1,5 +1,7 @@
 # @deepwhale-cn/dsh-industry-education
 
+[![dshfind 收录](https://dshfind.com/api/badge/feely0208/dsh-industry-education?lang=zh)](https://dshfind.com/zh/plugins/feely0208/dsh-industry-education)
+
 [![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/zh/plugins/feely0208/dsh-industry-education)
 
 **教育 App 上线前先过这一遍：备案号公示、备案信息表、成绩排名、广告 SDK、适龄范围、学籍号明文、儿童个人信息保护负责人。**
